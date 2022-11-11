@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import post, service
+from .models import post, service, perform
 # Create your views here.
 def homepage(request):
     hpost = post.objects.all()[0]
@@ -12,7 +12,11 @@ def homepage(request):
 
 
 def howto(request):
-    return render(request,'home/howto.html',{})
+    performs = perform.objects.all()
+    context = {
+        'perform':performs
+    }
+    return render(request,'home/howto.html',context)
 
 def history(request):
     return render(request,'home/history.html',{})

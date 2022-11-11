@@ -3,10 +3,10 @@
 {% block title %}how to Information{% endblock %}
 {% block content %}
 
- {% for prfm in perform %}
-  <h1 align="center">{{prfm.title}}</h1>
+ {% for hadis in hadith %}
+  <h1 align="center">{{hadis.title}}</h1>
   <p align="justify">
-      {{prfm.description}}
+      {{hadis.description}}
   </p>
   {% endfor %}
 {% endblock %}

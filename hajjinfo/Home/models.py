@@ -12,6 +12,13 @@ class post(models.Model):
     description = models.TextField(max_length=700, blank=False)
     image = models.ImageField(upload_to='about/', blank=False)
 
+class perform(models.Model):
+    title = models.CharField(max_length=100, blank=True)
+    description = models.TextField(max_length=700, blank=False)
+    image = models.ImageField(upload_to='about/', blank=False)
+
 class service(models.Model):
     name = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to='image/', blank = False)
+    slug = models.SlugField(max_length=50, blank=True)
+    

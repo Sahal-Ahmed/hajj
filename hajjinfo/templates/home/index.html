@@ -72,16 +72,16 @@ rel="stylesheet"
                   <a class="nav-link" href="{% url 'history' %}">Hajj in Islamic History</a>
                 </li>
                 <li class="nav-item border-bottom border-secondary">
-                  <a class="nav-link" href="">Hajj in Quran and Hadith</a>
+                  <a class="nav-link" href="{% url 'hadith' %}">Hajj in Quran and Hadith</a>
                 </li>
                 <li class="nav-item border-bottom border-secondary">
-                  <a class="nav-link" href="">Hajj Visa Information</a>
+                  <a class="nav-link" href="{% url 'visa' %}">Hajj Visa Information</a>
                 </li>
                 <li class="nav-item border-bottom border-secondary">
                   <a class="nav-link" href="">Hajj Travel Agents</a>
                 </li>
                 <li class="nav-item border-bottom border-secondary">
-                  <a class="nav-link" href="">Hajj Car Rentals</a>
+                  <a class="nav-link" href="{% url 'rental' %}">Hajj Car Rentals</a>
                 </li>
                 <li class="nav-item border-bottom border-secondary">
                   <a class="nav-link" href="">Live Hajj Flight Info</a>
@@ -95,7 +95,7 @@ rel="stylesheet"
         
       </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
       <div class="container py-5">
         <!-- <div class="span8"> -->
           {%block content%}
@@ -104,7 +104,7 @@ rel="stylesheet"
         <!-- </div> -->
       </div>
     </div>
-    <div class="col-sm-1",style="padding:0">
+    <div class="col-sm-2",style="padding:0">
     </div>
   </div>
   {% include 'home/footer.html' %}
