@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import post, service, perform
 # Create your views here.
 def homepage(request):
-    hpost = post.objects.all()[0]
+    hpost = post.objects.all()
     services = service.objects.all()
     context ={
         'post':hpost,

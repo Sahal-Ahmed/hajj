@@ -2,11 +2,13 @@
 {% block title %} Hajj Information {% endblock %}
 
 {% block content %}
+{% for p in post %}
 <p align="justify">
-    {{post.description}}    
+    {{p.description}}    
 </p>
 {% load static %}
- <img src= "{{post.image.url}}", class="img-fluid",alt="Kaba"> 
+ <img src= "{{p.image.url}}", class="img-fluid",alt="Kaba" width="100%"> 
+ {% endfor %}
  <section>
     <h5 class="my-3">Our services</h5>
     <div class="row g-2">
