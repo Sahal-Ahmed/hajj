@@ -1,20 +1,17 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
-class homepost(models.Model):
-    title = models.CharField(max_length=100, blank=True)
-    description = models.TextField(max_length=700, blank=False)
-    image = models.ImageField(upload_to='about/', blank=False)
 
 
 class post(models.Model):
     title = models.CharField(max_length=100, blank=True)
-    description = models.TextField(max_length=700, blank=False)
+    description = RichTextField(blank=True, null=True)
     image = models.ImageField(upload_to='about/', blank=False)
 
 class perform(models.Model):
     title = models.CharField(max_length=100, blank=True)
-    description = models.TextField(max_length=700, blank=False)
+    description = RichTextField(blank=True, null=True)
     image = models.ImageField(upload_to='about/', blank=False)
 
 class service(models.Model):

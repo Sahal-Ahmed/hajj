@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Hotel',
     'Visa',
     'QuranHadith',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
