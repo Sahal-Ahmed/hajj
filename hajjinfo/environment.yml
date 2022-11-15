@@ -1,4 +1,4 @@
-name: virtual
+name: hajjinfo
 channels:
   - defaults
 dependencies:
