@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('Home.urls')),
     path('rental/', include('Rental.urls')),
     path('visa/', include('Visa.urls')),
-    path('hadith/', include('QuranHadith.urls'))
+    path('hadith/', include('QuranHadith.urls')),
+    path('hotel/', include('Hotel.urls'))
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

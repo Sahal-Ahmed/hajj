@@ -33,7 +33,11 @@ dependencies:
   - zlib=1.2.13=h8cc25b3_0
   - zstd=1.5.2=h19a0ad4_0
   - pip:
+    - babel==2.11.0
     - django-ckeditor==6.5.1
     - django-js-asset==2.0.0
+    - django-phonenumber-field==7.0.0
     - mysqlclient==2.1.1
+    - phonenumbers==8.13.1
+    - pytz==2022.6
 prefix: C:\Users\Umbrella\anaconda3\envs\virtual
