@@ -9,4 +9,4 @@ class Owner(models.Model):
     email = models.EmailField(max_length=254)
     contact = PhoneNumberField()
     hotel_name = models.CharField(max_length=100, null=True)
-    
+    password = models.CharField(max_length=50)

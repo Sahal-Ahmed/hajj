@@ -7,6 +7,7 @@ class OwnerRegistrationForm(forms.ModelForm):
     contact = PhoneNumberField(
         widget=PhoneNumberPrefixWidget(initial="Bn")
     )
+    password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = Owner
-        fields = ('first_name','last_name','contact')
+        fields = ('first_name','last_name','email','contact','hotel_name','password')

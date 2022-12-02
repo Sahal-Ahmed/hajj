@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 02:22 PM
+-- Generation Time: Dec 02, 2022 at 03:04 PM
 -- Server version: 10.4.22-MariaDB-log
 -- PHP Version: 7.4.26
 
@@ -175,6 +175,15 @@ CREATE TABLE `django_admin_log` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `django_admin_log`
+--
+
+INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
+(1, '2022-12-02 13:56:36.724238', 'de1fa085-b1f6-4796-bc7b-30a350ec0f6e', 'Owner object (de1fa085-b1f6-4796-bc7b-30a350ec0f6e)', 3, '', 11, 1),
+(2, '2022-12-02 13:56:36.745185', '6caeda1e-10ab-4855-93a0-5a073c5ff085', 'Owner object (6caeda1e-10ab-4855-93a0-5a073c5ff085)', 3, '', 11, 1),
+(3, '2022-12-02 13:56:36.750167', '06893b37-0fbd-4d18-85fe-ce5d985b1f96', 'Owner object (06893b37-0fbd-4d18-85fe-ce5d985b1f96)', 3, '', 11, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -249,7 +258,9 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (25, 'auth', '0011_update_proxy_permissions', '2022-11-26 01:04:40.391544'),
 (26, 'auth', '0012_alter_user_first_name_max_length', '2022-11-26 01:04:40.594650'),
 (27, 'sessions', '0001_initial', '2022-11-26 01:04:41.438336'),
-(28, 'Hotel', '0001_initial', '2022-12-01 13:20:51.914283');
+(28, 'Hotel', '0001_initial', '2022-12-01 13:20:51.914283'),
+(29, 'Hotel', '0002_owner_password', '2022-12-02 12:44:33.818849'),
+(30, 'Hotel', '0003_alter_owner_password', '2022-12-02 12:46:30.537352');
 
 -- --------------------------------------------------------
 
@@ -322,7 +333,8 @@ CREATE TABLE `hotel_owner` (
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(254) NOT NULL,
   `contact` varchar(128) NOT NULL,
-  `hotel_name` varchar(100) DEFAULT NULL
+  `hotel_name` varchar(100) DEFAULT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -490,7 +502,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
@@ -502,7 +514,7 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `home_perform`
