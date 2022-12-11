@@ -54,7 +54,30 @@ def LoginForm(request):
         k = len(res)
         while i < k:
             if res[i] == email and res2[i] == password:
-                return render(request,'hotel/profile.html',{'email':email})
+                em = email
+                
+                owner = Owner.objects.raw('SELECT * FROM hotel_owner WHERE email = %s', [em])
+                for o in owner:
+                    fname = o.first_name
+                    lname = o.last_name
+                    eml = o.email
+                    oid = o.id
+                    contact = o.contact
+                    hname = o.hotel_name
+
+                context = {
+                    
+                    'fname' : fname, 
+                    'lname' : lname,
+                    'email': eml,
+                    'orderid':oid,
+                    'contact':contact,
+                    'hotel':hname
+                }
+                # cursor3 = connection.cursor()
+                # personbyem = cursor3.execute("select * from hotel_owner where email=%s",[em])
+                # print(personbyem)
+                return render(request,'hotel/profile.html',context)
                 break
             i+=1
         else:
