@@ -9,15 +9,15 @@
         <div class="col-md-10 m-auto p-5">
             
             <form action="" method="POST">
-                {% csrf_token %}
+              {% csrf_token %}
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <label  class="form-label">Email address</label>
                   <input type="email" class="form-control" aria-describedby="emailHelp" name="email">
                  
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control"  name="password">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
