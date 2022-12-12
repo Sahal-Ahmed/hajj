@@ -10,7 +10,9 @@ from django.contrib import messages
 from django.db import connection
 # Create your views here.
 def hotel(request):
-    return render(request,'hotel/hotel.html')
+    owner = Owner.objects.all()
+    context={'hotel': owner}
+    return render(request,'hotel/hotel.html',context)
 
 
 def RegistrationForm(request):
@@ -18,7 +20,7 @@ def RegistrationForm(request):
         Ownerform = OwnerRegistrationForm(request.POST)
         if Ownerform.is_valid():
             Ownerform.save()
-            return HttpResponseRedirect('/login/')
+            return redirect('login')
 
         else:
             return render(request, 'hotel/registration.html',{'form' : Ownerform})
