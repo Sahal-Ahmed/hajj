@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'phonenumber_field',
     'phonenumbers',
-    
+    'django_countries',
 ]
 
 MIDDLEWARE = [
