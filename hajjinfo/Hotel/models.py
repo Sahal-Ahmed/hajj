@@ -6,6 +6,10 @@ from django_countries.fields import CountryField
 class Category(models.Model):
     name = models.CharField(max_length=50,blank=False)
 
+    def __str__(self):
+        return self.name
+    
+
 class Owner(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, max_length=10)
     first_name = models.CharField(max_length=50, null=True)
@@ -19,6 +23,9 @@ class Owner(models.Model):
     country = CountryField(max_length=30)   
     password = models.CharField(max_length=50)
     
+
+    def __str__(self):
+        return self.email
 
 
 class Hotel_Room_info(models.Model):

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import OwnerRegistrationForm
+from .forms import *
 from django.http import HttpResponseRedirect
 from Hotel.models import Owner
 
@@ -90,4 +90,10 @@ def LoginForm(request):
     
 
 def profile(request):
+    
     return render(request, 'hotel/profile.html')
+
+def RoomInfo(request):
+    rform = roominfo()
+    context = {'form':rform}
+    return render(request, 'hotel/roominfo.html',context)

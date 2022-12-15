@@ -1,5 +1,5 @@
 from django import forms
-from .models import Owner
+from .models import Owner, Hotel_Room_info
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
@@ -21,3 +21,10 @@ class OwnerRegistrationForm(forms.ModelForm):
             'country' : forms.TextInput(attrs={'class':'form-control'}),
             'password' : forms.PasswordInput(attrs={'class':'form-control'}),
         }
+
+class roominfo(forms.ModelForm):
+    class Meta:
+
+       model = Hotel_Room_info
+       fields = "__all__" 
+            
