@@ -3,11 +3,12 @@ from phonenumber_field.modelfields import PhoneNumberField
 import uuid
 from django_countries.fields import CountryField
 # Create your models here.
-class Category(models.Model):
-    name = models.CharField(max_length=50,blank=False)
+class Room(models.Model):
+    type = models.CharField(max_length=50,blank=False)
+    image = models.ImageField(upload_to='room/', blank=False)
 
     def __str__(self):
-        return self.name
+        return self.type
     
 
 class Owner(models.Model):
@@ -16,11 +17,6 @@ class Owner(models.Model):
     last_name = models.CharField(max_length=50, null=True)
     email = models.EmailField(max_length=254, unique=True)
     contact = PhoneNumberField()
-    hotel_name = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='hotel/', blank=False)
-    state = models.CharField(max_length=100)
-    city = models.CharField(max_length=30)
-    country = CountryField(max_length=30)   
     password = models.CharField(max_length=50)
     
 
@@ -28,8 +24,13 @@ class Owner(models.Model):
         return self.email
 
 
-class Hotel_Room_info(models.Model):
+class Hotel_info(models.Model):
     owner = models.OneToOneField(Owner, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    room_image = models.FileField(upload_to='room/', blank=False)
+    hotel_name = models.CharField(max_length=100, null=True)
+    banner = models.ImageField(upload_to='hotel/', blank=False)
+    state = models.CharField(max_length=100)
+    city = models.CharField(max_length=30)
+    country = CountryField(max_length=30)   
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     available = models.IntegerField()

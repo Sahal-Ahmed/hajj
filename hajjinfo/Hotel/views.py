@@ -65,7 +65,7 @@ def LoginForm(request):
                     eml = o.email
                     oid = o.id
                     contact = o.contact
-                    hname = o.hotel_name
+                    
 
                 context = {
                     
@@ -74,7 +74,7 @@ def LoginForm(request):
                     'email': eml,
                     'orderid':oid,
                     'contact':contact,
-                    'hotel':hname
+                    
                 }
                 # cursor3 = connection.cursor()
                 # personbyem = cursor3.execute("select * from hotel_owner where email=%s",[em])
@@ -94,6 +94,6 @@ def profile(request):
     return render(request, 'hotel/profile.html')
 
 def RoomInfo(request):
-    rform = roominfo()
+    rform = HotelInfo()
     context = {'form':rform}
     return render(request, 'hotel/roominfo.html',context)
