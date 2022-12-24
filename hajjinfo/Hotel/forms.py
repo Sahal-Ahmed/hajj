@@ -21,5 +21,14 @@ class HotelInfo(forms.ModelForm):
     class Meta:
 
        model = Hotel_info
-       fields = "__all__" 
-            
+       fields = ('owner','hotel_name','state','city','country','room','price','available') 
+       widgets = {
+            'owner' : forms.Select(attrs={'class':'form-control bg-light text-white'}),
+            'hotel_name' : forms.TextInput(attrs={'class':'form-control bg-light'}),            
+            'state' : forms.TextInput(attrs={'class':'form-control bg-light'}),
+            'city' : forms.TextInput(attrs={'class':'form-control bg-light'}),
+            'country' : forms.Select(attrs={'class':'form-control bg-light'}),
+            'room' : forms.Select(attrs={'class':'form-control bg-light'}),
+            'price' : forms.NumberInput(attrs={'class':'form-control bg-light'}),
+            'available' : forms.NumberInput(attrs={'class':'form-control bg-light'}),
+        }     

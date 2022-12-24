@@ -19,6 +19,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png' %}">
 <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
 
+
 <title>
   
    Material Dashboard 2  by Creative Tim
@@ -32,7 +33,9 @@
 
 
 <!--     Fonts and icons     -->
+
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Nucleo Icons -->
 <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
@@ -100,13 +103,13 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./tables.html">
+  <a class="nav-link text-white " href="{% url 'room' %}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">table_view</i>
+        <i class="fa-solid fa-hotel"></i>
       </div>
     
-    <span class="nav-link-text ms-1">Tables</span>
+    <span class="nav-link-text ms-1">Create Hotel</span>
   </a>
 </li>
 

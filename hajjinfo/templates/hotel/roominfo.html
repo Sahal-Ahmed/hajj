@@ -2,7 +2,19 @@
 
 
 {% block box %}
-<form action="" method="post">
-    {{form.as_div}}
-</form>
+<h4 class="text-dark text-center pb-3 fw-bold text-uppercase">Please Registration for display your hotel</h4>
+<div class="bg-info">
+    
+    <div class="row">
+        <div class="col-md-10 m-auto p-5">
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
