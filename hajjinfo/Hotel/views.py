@@ -93,7 +93,32 @@ def profile(request):
     
     return render(request, 'hotel/profile.html')
 
+def HotelInfo(request):
+    if request.method == "POST":
+        form = HotelInfoForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            #messages.SUCCESS(request,'New Hotel Added Successfully')
+            return redirect('hotelinfo') 
+
+        else:
+            return render(request, 'hotel/hotelinfo.html',{'form' : form})
+
+    hform = HotelInfoForm()
+    context = {'form':hform}
+    return render(request, 'hotel/hotelinfo.html',context)
+
 def RoomInfo(request):
-    rform = HotelInfo()
+    if request.method == "POST":
+        form = RoomInfoForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            #messages.SUCCESS(request,'New Hotel Added Successfully')
+            return redirect('room') 
+
+        else:
+            return render(request, 'hotel/roominfo.html',{'form' : form})
+
+    rform = RoomInfoForm()
     context = {'form':rform}
     return render(request, 'hotel/roominfo.html',context)

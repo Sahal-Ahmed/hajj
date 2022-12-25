@@ -27,7 +27,7 @@ class Owner(models.Model):
 class Hotel_info(models.Model):
     owner = models.OneToOneField(Owner, on_delete=models.CASCADE)
     hotel_name = models.CharField(max_length=100, null=True)
-    banner = models.ImageField(upload_to='hotel/', blank=False)
+    banner = models.ImageField(upload_to='hotel/', null=True)
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=30)
     country = CountryField(max_length=30)   
