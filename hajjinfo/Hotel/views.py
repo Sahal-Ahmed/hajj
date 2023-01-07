@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from django.http import HttpResponseRedirect
-from Hotel.models import Owner
+from Hotel.models import *
 
 from django.contrib.auth import login, authenticate
 
@@ -10,8 +10,8 @@ from django.contrib import messages
 from django.db import connection
 # Create your views here.
 def hotel(request):
-    owner = Owner.objects.all()
-    context={'hotel': owner}
+    hotels = Hotel_info.objects.all()
+    context={'hotel': hotels}
     return render(request,'hotel/hotel.html',context)
 
 
@@ -107,6 +107,13 @@ def HotelInfo(request):
     hform = HotelInfoForm()
     context = {'form':hform}
     return render(request, 'hotel/hotelinfo.html',context)
+
+
+def GetHotelInfo(request, slug):
+    hdetails = Hotel_info.objects.get(slug=slug)
+    context = {'hotel': hdetails}
+    return render(request, 'hotel/hoteldetails.html', context)
+
 
 def RoomInfo(request):
     if request.method == "POST":

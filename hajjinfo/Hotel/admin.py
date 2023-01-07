@@ -12,5 +12,5 @@ admin.site.register(Room, RoomAdmin)
 
 
 class Hotel_infoAdmin(admin.ModelAdmin):
-    list_display = ('owner','hotel_name','banner','state','city','country','room','price','available')
+    list_display = ('owner','hotel_name','banner','state','city','country','room','price','available','slug')
 admin.site.register(Hotel_info, Hotel_infoAdmin)

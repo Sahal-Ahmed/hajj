@@ -22,21 +22,24 @@
 {% block content %}
 
 <section>
-    <h5 class="my-3">Hotel</h5>
-    <div class="row g-2">
-        {% for h in hotel  %}
+    <h5 class="my-3">{{hotel.hotel_name}}</h5>
+    <div class="row">
+        
             <div class="col-md-4">
-                <div class="card" style="width: 100%; height:18rem;">
-                    <a class="nav-link" href="{{h.get_hotel_url}}">
-                    <img src="{{h.image.url}}" class="card-img-top" alt="..." height="200px">
-                    <div class="card-body">
-                            <p class="card-text">{{h.hotel_name}}</p>
-                    </div>
-                </a>
+                <div>
+                    
+                    <img src="{{hotel.banner.url}}" height="200px" width="100%">
+                    
+               
                 </div>
             </div>
- 
-        {% endfor %}
+            <div class="col-md-8">
+                <span>Hotel</span>: <span>{{hotel.hotel_name}}</span><br>
+                <span>Location</span>: <span>{{hotel.state}}, {{hotel.city}}, {{hotel.country}}</span><br>
+                <span>Owner</span>: <span>{{hotel.owner}}</span><br>
+                <span>Owner</span>: <span>{{hotel.owner}}</span><br>
+            </div>
+       
         
     </div>
  </section>
