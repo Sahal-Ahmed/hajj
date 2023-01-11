@@ -112,7 +112,7 @@ def HotelInfo(request):
 def GetHotelInfo(request, slug):
     hdetails = Hotel_info.objects.get(slug=slug)
     context = {'hotel': hdetails}
-    return render(request, 'hotel/hoteldetails.html', context)
+    return render(request, 'hotel/room.html', context)
 
 
 def RoomInfo(request):
